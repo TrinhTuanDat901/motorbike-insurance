@@ -1,0 +1,34 @@
+spring:
+  application:
+    name: motorbike-insurance
+
+  datasource:
+    url: jdbc:sqlserver://localhost:1433;databaseName=motorbike_insurance;encrypt=false;trustServerCertificate=true
+    username: sa
+    password: '123'
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+    open-in-view: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.SQLServerDialect
+        format_sql: true
+        jdbc:
+          batch_size: 20
+
+# Bật log hiển thị giá trị truyền vào tham số (?) trong SQL
+#logging:
+  #level:
+    # Dành cho Spring Boot 3.x+
+    #org.hibernate.orm.jdbc.bind: TRACE
+    # Dành cho Spring Boot 2.x (nếu dùng 2.x thì bật dòng bên dưới)
+    # org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+
+# JWT
+#jwt:
+#  signer-key: '8d97f2da61b6dde0d062f55113d215cabd33a855534946934dc79b7554f71edc'
+#  expiration-ms: 86400000
